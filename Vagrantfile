@@ -45,9 +45,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.provision :shell, path: "./bootstrap/common.sh", preserve_order: true
     config.vm.provision :shell, path: "./bootstrap/nginx.sh", preserve_order: true
     config.vm.provision :shell, path: "./bootstrap/php.sh", preserve_order: true
-    config.vm.provision "shell", inline: "sudo sed -i 's/memory_limit = .*/memory_limit = '" + cfg["php"]["memory_limit"] + "'/' /etc/php.ini", preserve_order: true
-    config.vm.provision "shell", inline: "sudo echo 'date.timezone = \'" + cfg["php"]["date.timezone"] + "\'' >> /etc/php.ini", preserve_order: true
+    config.vm.provision :shell, inline: "sudo sed -i 's/memory_limit = .*/memory_limit = '" + cfg["php"]["memory_limit"] + "'/' /etc/php.ini", preserve_order: true
+    config.vm.provision :shell, inline: "sudo echo 'date.timezone = \'" + cfg["php"]["date.timezone"] + "\'' >> /etc/php.ini", preserve_order: true
     config.vm.provision :shell, path: "./bootstrap/postinstall.sh", preserve_order: true
+
+    # reload nginx after shared folders are mounted
+    config.vm.provision :shell, inline: "sudo systemctl restart nginx.service", run: "always", preserve_order: true
 
     # fix synced nfs user on every boot
     # config.vm.provision :shell, inline: "sudo bindfs --force-user=vagrant /var/www /var/www;", run: "always", preserve_order: true
