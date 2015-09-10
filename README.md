@@ -156,6 +156,11 @@ server {
     }
 }
 ```
+
+Notice:
+* Guest `/srv/www` coresponds to host `./www` folder (projects folder)
+* `server_name` values will be automatically added to host `/etc/hosts` file 
+
 Start vagrant box:
 ```bash
 vagrant up
@@ -164,4 +169,5 @@ Open [http://www.symfony2.local](http://www.symfony2.local)
 
 ## Known issues
 
- Due to NFS project filesystem IO is 10%~70% slower (however default VirtualBox shared folders is ~2300% slower).
+* Symlinks within your project may not work.
+* Due to NFS project filesystem IO is 10%~70% slower (however default VirtualBox shared folders is ~2300% slower).
