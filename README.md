@@ -167,6 +167,12 @@ vagrant up
 ```
 Open [http://www.symfony2.local](http://www.symfony2.local)
 
+## Folders structure
+
+|-`bootstrap` scripts and resources required to provision box (no need to worry about this).  
+|-`sites-enabled` nginx servers (vhosts) files. Will be automatically loaded to nginx config.  
+|-`www` folder of php applications folders or/and symlinks.
+
 ## Known issues
 
 * Symlinks within your project may not work.
