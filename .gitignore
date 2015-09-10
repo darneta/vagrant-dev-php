@@ -1,7 +1,8 @@
 .vagrant
-www
 config.yml
-!www/default/*
 www/*
-!sites-enabled/default
+!www/default
+www/default/logs/*
+!www/default/logs/.gitkeep
 sites-enabled/*
+!sites-enabled/default

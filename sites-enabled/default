@@ -1,0 +1,23 @@
+server {
+        listen 80 default_server;
+        listen [::]:80 default_server ipv6only=on;
+	
+	access_log /srv/www/default/logs/access.log;
+    	error_log /srv/www/default/logs/error.log;
+        root /srv/www/default/public_html;
+
+        index index.php index.htm;
+
+        server_name localhost;
+
+        location / {
+        	index index.html index.htm index.php;
+    	}
+
+	location ~ \.php$ {
+		include /etc/nginx/fastcgi_params;
+		fastcgi_pass  127.0.0.1:9000;
+		fastcgi_index index.php;
+		fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    	}
+}
