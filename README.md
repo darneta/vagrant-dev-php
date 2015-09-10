@@ -110,7 +110,7 @@ Software:
 
 ## Usage Example
 
-In this example we will run symfony2 inside this container. 
+In this example we will run symfony2 inside this box. 
 
 Get symfony2 installer:
 ```bash
