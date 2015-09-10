@@ -8,7 +8,7 @@ server {
 
         index index.php index.htm;
 
-        server_name localhost;
+        server_name localhost dev.local;
 
         location / {
         	index index.html index.htm index.php;
