@@ -7,3 +7,5 @@ vagrant:
 php:
   date.timezone: "Europe/Vilnius"
   memory_limit: 128M
+  upload_max_filesize: 128M
+  error_reporting: E_ALL
