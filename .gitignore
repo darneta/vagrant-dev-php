@@ -1,0 +1,7 @@
+.vagrant
+www
+config.yml
+!www/default/*
+www/*
+!sites-enabled/default
+sites-enabled/*

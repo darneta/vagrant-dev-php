@@ -1,0 +1,9 @@
+vagrant:
+  ip: 10.10.10.10
+  box: puppetlabs/centos-7.0-64-nocm
+  cpus: 1
+  ram: 1024
+  hostname: dev.php
+php:
+  date.timezone: "Europe/Vilnius"
+  memory_limit: 128M
