@@ -1,5 +1,9 @@
 # vagrant-dev-php
-Vagrant box for PHP software development
+Vagrant box for PHP software development.
+
+This box is only environment with various software required to run and debug php application.
+
+PHP application itself is not part of this box and is mounted via vagrant shared folders (NFS).
 
 ## What's inside
 
@@ -9,6 +13,7 @@ Software:
 - nginx
 - composer
 - blackfire.io agent
+- xdebug
 
 #### [PHP Modules]
 `apc`, 
