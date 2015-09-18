@@ -88,6 +88,11 @@ Software:
 `Xdebug`, 
 `Zend OPcache`
 
+####[Additional software]
+`npm`, 
+`glup`,
+`bower`
+
 ## Prerequisites
 - Unix-like OS
 - Vagrant >= 1.6.0

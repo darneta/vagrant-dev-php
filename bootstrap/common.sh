@@ -1,3 +1,12 @@
 sudo -i
 
-yum install git mercurial ant -y;
+yum install -y \
+    ant \
+    git \
+    mercurial \
+    npm \
+    wget
+
+npm install -g \
+    bower \
+    gulp

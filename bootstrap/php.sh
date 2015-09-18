@@ -1,10 +1,30 @@
 sudo -i
 
-# Install PHP 5.6
-yum --enablerepo=remi,remi-php56 install -y php-fpm php-common
-
-# Install PHP 5.6 modules
-yum --enablerepo=remi,remi-php56 install -y php-opcache php-pecl-apcu php-cli php-pear php-intl php-exif php-pdo php-mysql php-mysqlnd php-pgsql php-pecl-mongo php-pecl-sqlite php-pecl-memcache php-pecl-memcached php-gd php-mbstring php-mcrypt php-xml php-devel phpunit mysql-client
+# Install PHP 5.6 && modules
+yum --enablerepo=remi,remi-php56 install -y \
+    mysql-client \
+    php-cli \
+    php-common \
+    php-devel \
+    php-exif \
+    php-fpm \
+    php-gd \
+    php-intl \
+    php-mbstring \
+    php-mcrypt \
+    php-mysql \
+    php-mysqlnd \
+    php-opcache \
+    php-pdo \
+    php-pear \
+    php-pecl-apcu \
+    php-pecl-memcache \
+    php-pecl-memcached \
+    php-pecl-mongo \
+    php-pecl-sqlite \
+    php-pgsql \
+    php-xml \
+    phpunit
 
 # Install composer
 curl -sS https://getcomposer.org/installer | php
