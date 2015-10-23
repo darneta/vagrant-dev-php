@@ -50,6 +50,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.provision :shell, inline: "sudo sed -i 's/upload_max_filesize = .*/upload_max_filesize = " + cfg["php"]["upload_max_filesize"] + "/' /etc/php.ini", preserve_order: true
     config.vm.provision :shell, inline: "sudo sed -i 's/error_reporting = .*/error_reporting = " + cfg["php"]["error_reporting"] + "/' /etc/php.ini", preserve_order: true
     config.vm.provision :shell, inline: "sudo echo 'date.timezone = \'" + cfg["php"]["date.timezone"] + "\'' >> /etc/php.ini", preserve_order: true
+    config.vm.provision :shell, inline: "sudo sed -i 's/client_max_body_size .*;/client_max_body_size " + cfg["php"]["upload_max_filesize"] + ";/' /etc/nginx/nginx.conf", preserve_order: true
 
     config.vm.provision :shell, path: "./bootstrap/postinstall.sh", preserve_order: true
 
