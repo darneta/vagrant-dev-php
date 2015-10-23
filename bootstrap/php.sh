@@ -40,4 +40,4 @@ sed -i 's/display_startup_errors = .*/display_startup_errors = On/' /etc/php.ini
 # Install blackfire.io
 yum -y install pygpgme
 wget -O - "http://packages.blackfire.io/fedora/blackfire.repo" | tee /etc/yum.repos.d/blackfire.repo
-yum -y install blackfire-agent
+yum -y install blackfire-agent blackfire-php

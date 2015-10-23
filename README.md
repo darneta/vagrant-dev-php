@@ -82,7 +82,8 @@ Software:
 `xsl`, 
 `Zend OPcache`, 
 `zip`, 
-`zlib`
+`zlib`,
+`blackfire`
 
 ####[Zend Modules]
 `Xdebug`, 
