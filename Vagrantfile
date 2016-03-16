@@ -60,5 +60,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     # fix synced nfs user on every boot
     # config.vm.provision :shell, inline: "sudo bindfs --force-user=vagrant /var/www /var/www;", run: "always", preserve_order: true
 
+    config.vm.provision :shell, inline: "sudo echo '127.0.0.1   localhost " + hosts.join(' ') + "' > /etc/hosts", run: "always", preserve_order: true
+
     config.vbguest.auto_update = true
 end
